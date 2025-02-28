@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 const roboto = Roboto({
+	subsets: ['latin'],
 	weight: ["400"],
 	variable: "--roboto",
 	display: "swap",
@@ -19,6 +20,7 @@ const roboto = Roboto({
 });
 
 const quicksand = Quicksand({
+	subsets: ['latin'],
 	weight: ["400", "600"],
 	variable: '--quicksand',
 	display: 'swap',
