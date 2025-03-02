@@ -1,3 +1,3 @@
-import { InfiniteSlider, useInfiniteSlider } from "./InfiniteSlider";
+import { InfiniteSlider } from "./InfiniteSlider";
 
-export { InfiniteSlider, useInfiniteSlider }
+export { InfiniteSlider }
