@@ -1,4 +1,5 @@
 import { Hero } from "./components/Hero";
+import { PainPoints } from "./components/PainPoints";
 
 export default function Home() {
 	return (
@@ -8,7 +9,9 @@ export default function Home() {
 				<Hero />
 			</section>
 
-			<section id="features" className="features"></section>
+			<section id="features" className="pain-points-solution">
+				<PainPoints />
+			</section>
 
 			<section id="pricing" className="pricing"></section>
 
