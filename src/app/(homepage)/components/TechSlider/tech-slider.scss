@@ -1,0 +1,19 @@
+.tech-slider {
+    background-image: linear-gradient(to left, rgba(#000, 0), rgba(#333, 0.75), rgba(#555, 0.55), rgba(#111, .1), rgba(#000, 0));
+    margin: 3rem 0;
+    padding: 2rem 0;
+    width: 80rem;
+    overflow: hidden;
+}
+
+.logo {
+    --logo-size: 4rem;
+
+    position: relative;
+    min-width: 10rem;
+    min-height: var(--logo-size);
+
+    img {
+        object-fit: contain;
+    }
+}
