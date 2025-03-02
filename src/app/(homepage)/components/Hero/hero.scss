@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .hero {
     position: relative;
     width: 100%;
@@ -18,33 +20,29 @@
 
             &__headline {
                 font-size: 4.5rem;
+                animation: enter-from-left forwards 1s ease-in-out;
+                
+                transition: all .3s ease-in-out;
+                &:hover {
+                    color: var(--text-hover-color);
+                    transition: all .3s ease-in-out;
+                }
             }
 
             &__subheading {
                 font-size: 2.1rem;
+                animation: enter-from-left forwards 1s ease-in-out;
+                
+                transition: all .3s ease-in-out;
+                &:hover {
+                    color: var(--text-hover-color);
+                    transition: all .3s ease-in-out;
+                }
             }
 
             &__cta {
-                &__button {
-                    background-color: #eee;
-                    border: 1px solid #eee;
-                    padding: 1.6rem 2.5rem;
-                    border-radius: 1rem;
-                    font-size: 1.8rem;
-                    font-weight: 600;
-                    transition: all 0.2s ease-in-out;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: transparent;
-                        color: #eee;
-                        transition: all 0.2s ease-in-out;
-                    }
-
-                    &:active {
-                        background-color: #333;
-                    }
-                }
+                display: flex;
+                gap: 3rem;
             }
         }
 
@@ -52,6 +50,11 @@
             width: 60rem;
             height: 45rem;
             position: relative;
+
+            animation: raise forwards 1s ease-in-out, bounce 10s infinite;
+            animation-fill-mode: forwards;
+            animation-delay: .1s;
+            animation-composition: add;
 
             img {
                 object-fit: cover;
@@ -222,5 +225,49 @@
                 }
             }
         }
+    }
+}
+
+@keyframes raise {
+    0% {
+        transform: translatey(5rem);
+    }
+
+    100% {
+        transform: translatey(0);
+    }
+}
+
+@keyframes enter-from-left {
+    0% {
+        transform: translate(-15rem);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes enter-from-right {
+    0% {
+        transform: translate(15rem);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(-3rem);
+    }
+
+    50% {
+        transform: translateY(0);
     }
 }

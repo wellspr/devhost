@@ -39,4 +39,15 @@ export const links = [
         name: "cta",
         href: "#cta"
     } */
-]
+];
+
+export const content = {
+    hero: {
+        headline: "Code Locally, Deploy Globally in Seconds",
+        subheading: "The hosting platform built for developers who value their workflow"
+    },
+    button_cta: {
+        primary: "Deploy Now",
+        secondary: "Documentation"
+    }
+}

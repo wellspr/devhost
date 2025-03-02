@@ -1,0 +1,24 @@
+.button-cta {
+    background-color: #eee;
+    border: 1px solid #eee;
+    padding: 1.6rem 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    //&--primary {}
+
+    //&--secondary {}
+
+    &:hover {
+        background-color: transparent;
+        color: #eee;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:active {
+        background-color: #333;
+    }
+}

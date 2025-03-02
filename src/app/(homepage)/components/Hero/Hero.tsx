@@ -1,9 +1,12 @@
 import "./hero.scss";
 import hosting from "../../images/hosting/4103163_1032.svg";
 
-import { Header } from "../../layout/Header/Header";
+import { Header } from "../../layout/Header";
 import Image from "next/image";
 import Link from "next/link";
+import { content } from "@/config";
+import { ButtonCTAPrimary, ButtonCTASecondary } from "../ButtonCTA";
+import { TechSlider } from "../TechSlider";
 
 const arr: number[] = [];
 for (let i = 0; i < 80; i++) {
@@ -11,6 +14,7 @@ for (let i = 0; i < 80; i++) {
 }
 
 export const Hero = () => {
+    const { hero } = content;
 
     return (
         <div className="hero">
@@ -20,23 +24,27 @@ export const Hero = () => {
                 {
                     arr.map((i) => {
                         return (
-                            <div key={i} className="tiles__tile"></div>
-                        )
+                            <div key={i} className="tiles__tile" />
+                        );
                     })
                 }
-
             </div>
 
             <div className="hero__content">
                 <div className="hero__content__highlights">
-                    <h2 className="hero__content__highlights__headline">Deploy Faster, Scale Smarter, Perform Better</h2>
-                    <h3 className="hero__content__highlights__subheading">Powerful developer tools, zero infrastructure headaches, and 99.99% guaranteed uptime.</h3>
+                    <h2 className="hero__content__highlights__headline">
+                        {hero.headline}
+                    </h2>
+                    <h3 className="hero__content__highlights__subheading">
+                        {hero.subheading}
+                    </h3>
 
                     <div className="hero__content__highlights__cta">
-                        <button className="hero__content__highlights__cta__button">
-                            Get Started
-                        </button>
+                        <ButtonCTAPrimary />
+                        <ButtonCTASecondary />
                     </div>
+
+                    <TechSlider />
                 </div>
                 <div className="hero__content__illustration">
                     <Image src={hosting} alt="cloud server web hosting" fill />
