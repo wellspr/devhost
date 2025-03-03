@@ -1,3 +1,4 @@
+import { IconBulb, IconExclamationCircle } from "@tabler/icons-react";
 import "./pain-points.scss";
 
 export const PainPoints = () => {
@@ -7,32 +8,40 @@ export const PainPoints = () => {
 
             <h2 className="headline">We got you covered!</h2>
 
-            <table className="table">
-                <tr className="table__header">
-                    <th className="table__header__content table__header__content--before">Before</th>
-                    <th className="table__header__content table__header__content--after">After</th>
-                </tr>
+            <div className="grid">
+                <div className="grid__header">
+                    <div className="grid__header__content">
+                        <div className="grid__header__content__item grid__header__content__item--before">
+                            <IconExclamationCircle />
+                            Before
+                            </div>
+                        <div className="grid__header__content__item grid__header__content__item--after">
+                            <IconBulb />
+                            After</div>
+                    </div>
+                </div>
+                <div className="grid__body">
+                    <div className="grid__body__content">
+                        <div className="grid__body__content__item grid__body__content__item--before">Environment inconsistencies between local and production</div>
+                        <div className="grid__body__content__item grid__body__content__item--after">Identical containers across all environments</div>
+                    </div>
 
-                <tr className="table__body">
-                    <td className="table__body__content table__body__content--before">Environment inconsistencies between local and production</td>
-                    <td className="table__body__content table__body__content--after">Identical containers across all environments</td>
-                </tr>
+                    <div className="grid__body__content">
+                        <div className="grid__body__content__item grid__body__content__item--before">Complex DevOps setup for simple deployments</div>
+                        <div className="grid__body__content__item grid__body__content__item--after">Push-to-deploy with zero configuration</div>
+                    </div>
 
-                <tr className="table__body">
-                    <td className="table__body__content table__body__content--before">Complex DevOps setup for simple deployments</td>
-                    <td className="table__body__content table__body__content--after">Push-to-deploy with zero configuration</td>
-                </tr>
+                    <div className="grid__body__content">
+                        <div className="grid__body__content__item grid__body__content__item--before">Unpredictable scaling costs</div>
+                        <div className="grid__body__content__item grid__body__content__item--after">Project-based pricing with unlimited deployments</div>
+                    </div>
 
-                <tr className="table__body">
-                    <td className="table__body__content table__body__content--before">Unpredictable scaling costs</td>
-                    <td className="table__body__content table__body__content--after">Project-based pricing with unlimited deployments</td>
-                </tr>
-
-                <tr className="table__body">
-                    <td className="table__body__content table__body__content--before">Lack of developer-specific monitoring</td>
-                    <td className="table__body__content table__body__content--after">Framework-aware metrics and logging</td>
-                </tr>
-            </table>
+                    <div className="grid__body__content">
+                        <div className="grid__body__content__item grid__body__content__item--before">Lack of developer-specific monitoring</div>
+                        <div className="grid__body__content__item grid__body__content__item--after">Framework-aware metrics and logging</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     );
@@ -48,7 +57,7 @@ Pain Point 2: "Complex DevOps setup for simple deployments"
 Solution: "Push-to-deploy with zero configuration"
 
 
-Pain Point 3: "Unpredictable scaling costs"
+Pain Point 3: "Unpredicgrid scaling costs"
 Solution: "Project-based pricing with unlimited deployments"
 
 

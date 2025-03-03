@@ -6,37 +6,77 @@
         font-size: 2.8rem;
     }
 
-    .table {
+    .grid {
         width: 100%;
         padding: 5rem 3rem;
 
         &__header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             padding: 3rem;
             font-size: 2.1rem;
             width: 100%;
 
             &__content {
-                width: 50%;
-                text-align: center;
+                display: flex;
+                width: 100%;
+
+                &__item {
+                    width: 50%;
+                    text-align: center;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    font-size: 2.6rem;
+
+                    //&--before {}
+
+                    //&--after {}
+
+                    svg {
+                        --size: 3rem;
+                        width: var(--size);
+                        height: var(--size);
+                    }
+                }
             }
         }
 
         &__body {
             display: flex;
-            justify-content: center;
-            align-items: center;
-
+            flex-direction: column;
+            gap: 3rem;
+            
             &__content {
+                display: flex;
+                gap: 3rem;
+                
+                &__item {
+                    border: 0.1rem solid;
+                    padding: 2rem;
+                    font-size: 1.8rem;
+                    text-align: center;
+                    width: 50%;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                padding: 2rem;
-                font-size: 1.8rem;
-                text-align: center;
-                width: 50%;
+                    &--before {
+                        background-color: rgba(#995555, .05);
+                        border: 0.4rem solid #995555;
+                        color: #fff;
+                        font-weight: bold;
+                    }
 
+                    &--after {
+                        background-color: rgba(#337722, .05);
+                        border: 0.4rem solid #337722;
+                        color: #fff;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }
