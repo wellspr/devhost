@@ -18,7 +18,7 @@ import svelte from "../../images/technologies/sveltetechnology-icon.svg";
 import flask from "../../images/technologies/palletsprojects_flask-icon.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { InfiniteSlider } from "../InfiniteSlider";
+import { InfiniteSlider } from "@wellspr/slider";
 
 type Logo = { id: number, image: StaticImport, alt: string }
 
@@ -53,5 +53,5 @@ export const TechSlider = () => {
         );
     });
 
-    return <InfiniteSlider arr={arr} className="tech-slider" />;
+    return <InfiniteSlider arr={arr} className="tech-slider" translationStep="10rem" />;
 };
