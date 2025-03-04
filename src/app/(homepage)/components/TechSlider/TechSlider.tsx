@@ -19,6 +19,7 @@ import flask from "../../images/technologies/palletsprojects_flask-icon.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { InfiniteSlider } from "@wellspr/slider";
+import { useLayoutEffect, useRef } from "react";
 
 type Logo = { id: number, image: StaticImport, alt: string }
 
@@ -47,11 +48,49 @@ const Logo = ({ image, alt }: { image: StaticImport; alt: string }) => {
 
 export const TechSlider = () => {
 
+    const ref = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        const techSliderCurrent = ref.current;
+
+        const adjustWidth = () => {
+            const width = techSliderCurrent?.getBoundingClientRect().width;
+
+            if (width) {
+                const slider = techSliderCurrent.children[0] as HTMLElement;
+
+                if (slider) {
+                    slider.style.width = `${Math.floor(width / 100) * 100}px`;
+                }
+            }
+        };
+
+        adjustWidth();
+
+        const observer = new ResizeObserver(() => {
+            adjustWidth();
+        });
+
+        if (techSliderCurrent) {
+            observer.observe(techSliderCurrent);
+        }
+
+        return () => {
+            if (techSliderCurrent) {
+                observer.unobserve(techSliderCurrent);
+            }
+        };
+    }, []);
+
     const arr = logos.map(logo => {
         return (
             <Logo key={logo.id} alt={logo.alt} image={logo.image} />
         );
     });
 
-    return <InfiniteSlider arr={arr} className="tech-slider" translationStep="10rem" />;
+    return (
+        <div ref={ref} className="tech-slider-container">
+            <InfiniteSlider arr={arr} className={`tech-slider`} translationStep="10rem" />
+        </div>
+    );
 };
