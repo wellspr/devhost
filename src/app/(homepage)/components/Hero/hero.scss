@@ -11,7 +11,7 @@
         padding: 5rem;
 
         &__highlights {
-            width: 70%;
+            width: 55%;
             padding: 2rem;
 
             display: flex;
@@ -43,6 +43,17 @@
             &__cta {
                 display: flex;
                 gap: 3rem;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+            }
+            
+            &__techslider {
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
         }
 
@@ -57,7 +68,9 @@
             animation-composition: add;
 
             img {
-                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
 
             &__attribution {

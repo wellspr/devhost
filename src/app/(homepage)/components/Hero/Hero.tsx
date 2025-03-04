@@ -39,12 +39,15 @@ export const Hero = () => {
                         {hero.subheading}
                     </h3>
 
+                    <div className="hero__content__highlights__techslider">
+                        <TechSlider />
+                    </div>
+                    
                     <div className="hero__content__highlights__cta">
                         <ButtonCTAPrimary />
                         <ButtonCTASecondary />
                     </div>
 
-                    <TechSlider />
                 </div>
                 <div className="hero__content__illustration">
                     <Image src={hosting} alt="cloud server web hosting" fill />
