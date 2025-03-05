@@ -1,13 +1,38 @@
 .footer {
     width: 100vw;
-    display: flex;
-    justify-content: center;
     padding: 2rem;
-    font-size: 1.1rem;
-
-    &__copy {
-        width: 100%;
+    
+    &__content {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        &__links {
+            &__link-github {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .6rem;
+                color: inherit;
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border: .1rem solid;
+                border-radius: .6rem;
+
+                &:hover {
+                    background-color: rgba($color: #333, $alpha: .35);
+                    color: #fff;
+                }
+            }
+        }
+
+        &__copy {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
     }
 }
